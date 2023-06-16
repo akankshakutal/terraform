@@ -5,4 +5,5 @@ resource "aws_instance" "nginx_server" {
   tags                        = local.common_tags
   key_name                    = "deployer-key"
   associate_public_ip_address = false
+  depends_on                  = [aws_internet_gateway.internet_gateway]
 }
